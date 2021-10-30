@@ -10,6 +10,12 @@ module.exports  = {
 */
 
 function run(toolbox){
+    
+    if(typeof toolbox.parameters.first !== "string"){
+        toolbox.print.error('First parameter not entered!')
+        return;
+    }
+
     const first = toolbox.parameters.first;
     const extension = 'js'
 
@@ -19,7 +25,7 @@ function run(toolbox){
         props: { 
             first:first,
         },
-        directory: toolbox.diretoryTemplates()
+        directory: toolbox.gera.diretoryTemplates()
     })
 }
 

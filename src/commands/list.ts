@@ -3,7 +3,7 @@ import { GluegunCommand } from 'gluegun'
 const command: GluegunCommand = {
     name: 'list',
     alias: ['l'],
-    description:'Lists all commands created for the project.',
+    description:'Lists all commands created for the project (ex. gera list).',
     run: async toolbox => {
         const {
             print

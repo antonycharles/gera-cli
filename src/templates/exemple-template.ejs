@@ -6,24 +6,13 @@
 /*
     Exemple props:
 */
-//var:
-var name = (<%- props.name %>)
+const <%- props.name %>_const:string = '<%- props.name %>'
 
-//JavaScript:
-module.exports = {
-    name: '\<%- props.name %>'
-}
 
-//C#
-using System;
+class <%- props.name %>_class{
+    private <%- props.name %>_private:any;
 
-namespace MyFlashCards.Co.Domain.Models
-{
-    public class <%- props.name %>
-    {
-        public string Id { get; private set; }
+    <%- props.name %>_funct() {
+        return '<%- props.name %>'
     }
 }
-  
-//Html
-<p class="<%- props.name %>"><%- props.name %></p>

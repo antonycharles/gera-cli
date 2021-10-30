@@ -7,8 +7,10 @@ module.exports = (toolbox: GluegunToolbox) => {
       getCommands: () => {
         let commands = [];
 
-
         const arquivos = toolbox.filesystem.list(toolbox.filesystem.cwd() + "/.gera-commands/")
+
+        if(arquivos === undefined)
+          return commands;
 
         const arquivoFilter = arquivos.filter(e => e.indexOf('.js') > 0); 
 

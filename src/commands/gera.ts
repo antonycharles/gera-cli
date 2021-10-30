@@ -1,9 +1,8 @@
 import { GluegunCommand } from 'gluegun'
 
 const command: GluegunCommand = {
-    name: 'exec',
-    alias: ['e'],
-    description:'Executes a command created for the project (ex. gera e <comando>).',
+    name: 'gera',
+    description:'Executes a command created for the project (ex. gera <comando>).',
     run: async toolbox => {
 
         const nameCommand = toolbox.parameters.first;
