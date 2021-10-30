@@ -1,4 +1,5 @@
 .DS_Store
+.gera-commands
 node_modules
 npm-debug.log
 coverage
