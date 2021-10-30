@@ -45,21 +45,28 @@ module.exports = (toolbox: GluegunToolbox) => {
     diretoryTemplates: () => {
       return toolbox.filesystem.cwd() + '/.gera-commands/templates'
     },
-    generate: (props: { template: string, target: string, props: {} }) => {
-      const template = toolbox.filesystem.cwd() + '/.gera-commands/templates' + '/' + props.template;
+    generate: async (props: {
+      template: string
+      target: string
+      props: {}
+    }) => {
+      const template =
+        toolbox.filesystem.cwd() +
+        '/.gera-commands/templates' +
+        '/' +
+        props.template
 
-      if (toolbox.filesystem.exists(template) !== "file") {
+      if (toolbox.filesystem.exists(template) !== 'file') {
         toolbox.print.error(`template not found. Target: ${template}`)
-        return;
+        return
       }
 
-      toolbox.template.generate({
+      await toolbox.template.generate({
         template: props.template,
         target: props.target,
         props: props.props,
         directory: toolbox.gera.diretoryTemplates()
       })
-
     }
   }
 
