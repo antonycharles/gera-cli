@@ -11,16 +11,15 @@ function start(toolbox){
         return;
     }
 
-    toolbox.template.generate({
+    toolbox.gera.generate({
         template: 'exemplo.ejs',
         target: `teste/${toolbox.parameters.first}-model.ts`,
-        props: { name:toolbox.parameters.first },
-        directory: toolbox.gera.diretoryTemplates()
+        props: { name: toolbox.parameters.first }
     })
 }
 
 /*
-    Documentation complete toolbox:
+    Complete toolbox documentation:
     https://infinitered.github.io/gluegun/#/toolbox-api
 */
 

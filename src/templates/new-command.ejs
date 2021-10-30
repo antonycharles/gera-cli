@@ -5,7 +5,7 @@ module.exports  = {
 }
 
 /*
-    Documentation toolbox:
+    Complete toolbox documentation:
     https://infinitered.github.io/gluegun/#/toolbox-api
 */
 
@@ -19,13 +19,12 @@ function run(toolbox){
     const first = toolbox.parameters.first;
     const extension = 'js'
 
-    toolbox.template.generate({
+    toolbox.gera.generate({
         template: '<%= props.command %>.ejs',
         target: `default/${first}.${extension}`,
         props: { 
             first:first,
-        },
-        directory: toolbox.gera.diretoryTemplates()
+        }
     })
 }
 
