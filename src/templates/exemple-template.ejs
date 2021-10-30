@@ -1,0 +1,29 @@
+/*
+    Documentation ejs: 
+    https://ejs.co/#docs
+*/
+
+/*
+    Exemple props:
+*/
+//var:
+var name = (<%- props.name %>)
+
+//JavaScript:
+module.exports = {
+    name: '\<%- props.name %>'
+}
+
+//C#
+using System;
+
+namespace MyFlashCards.Co.Domain.Models
+{
+    public class <%- props.name %>
+    {
+        public string Id { get; private set; }
+    }
+}
+  
+//Html
+<p class="<%- props.name %>"><%- props.name %></p>
