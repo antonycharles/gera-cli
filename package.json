@@ -2,7 +2,6 @@
   "name": "gera",
   "version": "1.0.0",
   "description": "Gera CLI",
-  "private": true,
   "types": "build/types/types.d.ts",
   "bin": {
     "gera": "bin/gera"

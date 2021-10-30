@@ -4,37 +4,47 @@ import { GluegunToolbox } from 'gluegun'
 // to your commands
 module.exports = (toolbox: GluegunToolbox) => {
   toolbox.gera = {
-      getCommands: () => {
-        let commands = [];
+    getCommands: () => {
+      let commands = []
 
-        const arquivos = toolbox.filesystem.list(toolbox.filesystem.cwd() + "/.gera-commands/")
+      const arquivos = toolbox.filesystem.list(
+        toolbox.filesystem.cwd() + '/.gera-commands/'
+      )
 
-        if(arquivos === undefined)
-          return commands;
+      if (arquivos === undefined) return commands
 
-        const arquivoFilter = arquivos.filter(e => e.indexOf('.js') > 0); 
+      const arquivoFilter = arquivos.filter(e => e.indexOf('.js') > 0)
 
-        arquivoFilter.forEach((arquivo) => {
+      arquivoFilter.forEach(arquivo => {
+        const command = require(toolbox.filesystem.cwd() +
+          '/.gera-commands/' +
+          arquivo)
 
-          const command = require(toolbox.filesystem.cwd() + "/.gera-commands/" + arquivo);
+        const typeofName = typeof command.name
+        const typeorRun = typeof command.run
 
-          if(typeof command.name !== "string"){
-            toolbox.print.error(`Erro module '${arquivo}', did not export the attribute string name (ex. module.exports  = {name:'<name_module>',...}).`)
-          }
+        if (typeofName !== 'string') {
+          toolbox.print.error(
+            `Erro module '${arquivo}', did not export the attribute string name (ex. module.exports  = {name:'<name_module>',...}).`
+          )
+        }
 
-          if(typeof command.run !== "function"){
-            toolbox.print.error(`Erro module '${arquivo}', did not export the function run (ex. module.exports  = {run:<function_run>,...}).`)
-          }
+        if (typeorRun !== 'function') {
+          toolbox.print.error(
+            `Erro module '${arquivo}', did not export the function run (ex. module.exports  = {run:<function_run>,...}).`
+          )
+        }
 
-          if(typeof command.run === "function" && typeof command.name === "string")
-            commands.push(command);
-        })
+        if (typeorRun === 'function' && typeofName === 'string') {
+          commands.push(command)
+        }
+      })
 
-        return commands;
-      },
-      diretoryTemplates: () => {
-        return  toolbox.filesystem.cwd() + "/.gera-commands/templates";
-      }
+      return commands
+    },
+    diretoryTemplates: () => {
+      return toolbox.filesystem.cwd() + '/.gera-commands/templates'
+    }
   }
 
   // enable this if you want to read configuration in from
