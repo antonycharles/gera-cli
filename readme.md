@@ -35,7 +35,7 @@ Após instalação da CLI no seu computador:
 - Documentação ejs: https://ejs.co/#docs
 
 ## Exemplo 1
-Automatização na criação de classe para o seu projeto .Net
+Automatização na criação de classes para o seu projeto .Net
 1. Inície o Gera CLI no seu projeto.
 ```
 gera start
