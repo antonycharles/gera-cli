@@ -40,8 +40,6 @@ Automatização na criação de classes para o seu projeto .Net
 ```
 gera start
 ```
-![Untitled](https://user-images.githubusercontent.com/24979597/139561302-de01e7fb-b0b2-4608-9277-2377cebd4d1c.png)
-
 2. Crie um novo comando para o seu projeto, com o nome de `domain:models`.
 ```
 gera new domain:models
@@ -91,11 +89,9 @@ namespace MyFlashCards.Co.Domain.Models
 ```
 gera domain:models Usuario
 ```
-Resultado:
-![Frame 1](https://user-images.githubusercontent.com/24979597/139561659-06dd56cd-fb40-498a-94f3-cf1846d899ee.png)
 
 
-<a href="https://www.npmjs.com/package/gluegun">😍 Gluegun</a>
+😍 Gluegun (https://www.npmjs.com/package/gluegun)
 
 ## License
 
