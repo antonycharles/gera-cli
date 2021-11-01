@@ -45,7 +45,7 @@ gera start
 gera new domain:models
 ```
 3. Altere o arquivo `.gera-commands/domain:models.js` referente ao comando criado:
-```
+```js
 module.exports  = {
     name:'domain:models',
     description:'Cria uma nova classe de modelo em src/MyFlashCards.Co.Domain/Models',
@@ -72,7 +72,7 @@ function run(toolbox){
 ```
 
 4. Altere o template `.gera-commands/templates/domain:models.ejs`.
-```
+```js
 using System;
 
 namespace MyFlashCards.Co.Domain.Models
