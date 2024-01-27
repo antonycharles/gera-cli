@@ -1,6 +1,6 @@
 {
   "name": "gera",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Gera CLI",
   "types": "build/types/types.d.ts",
   "bin": {

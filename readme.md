@@ -11,7 +11,7 @@ Uma CLI que permite facilitar o processo de desenvolvimento de código dentro de
 
 ### Principais comandos:   
 - `start (s)`     Inícia o Gera CLI no diretório atual (ex. `gera start`).  
-- `list (l)`      Lista todos os comandos criados para o projeto, presentes na pasta `.gera-commands` (ex. `gera list`).         
+- `list (l)`      Lista todos os comandos criados para o projeto, presentes na pasta `.gera` (ex. `gera list`).         
 - `new (n)`       Crie um novo comando para o projeto (ex. `gera new <comando_name>`). 
 - `gera`          Executa um comando criado para o projeto (ex. `gera <comando_name>`).                      
 - `help (h)`      Lista os comandos principais da CLI.                                                                   
@@ -45,7 +45,7 @@ gera start
 ```
 gera new domain:models
 ```
-3. Altere o arquivo `.gera-commands/domain:models.js` referente ao comando criado:
+3. Altere o arquivo `.gera/domain:models.js` referente ao comando criado:
 ```js
 module.exports  = {
     name:'domain:models',
@@ -72,7 +72,7 @@ function run(toolbox){
 }
 ```
 
-4. Altere o template `.gera-commands/templates/domain:models.ejs`.
+4. Altere o template `.gera/templates/domain:models.ejs`.
 ```
 using System;
 
@@ -115,7 +115,7 @@ gera start
 ```
 gera new infra:repositories
 ```
-3. Altere o arquivo `.gera-commands/infra:repositories.js` referente ao comando criado:
+3. Altere o arquivo `.gera/infra:repositories.js` referente ao comando criado:
 ```js
 module.exports  = {
     name:'infra:repositories',
@@ -162,7 +162,7 @@ function run(toolbox){
 }
 ```
 
-4. Altere o template `.gera-commands/templates/infra:repositories.ejs`.
+4. Altere o template `.gera/templates/infra:repositories.ejs`.
 ```
 using Dapper;
 using LeilaoFake.Me.Core.Models;
@@ -186,7 +186,7 @@ namespace LeilaoFake.Me.Infra.Datas.Repositories
     }
 }
 ```
-5. Cria o template referente a interface `.gera-commands/templates/infra:irepositories.ejs`.
+5. Cria o template referente a interface `.gera/templates/infra:irepositories.ejs`.
 ```
 using System;
 using System.Collections.Generic;

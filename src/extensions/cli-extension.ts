@@ -8,7 +8,7 @@ module.exports = (toolbox: GluegunToolbox) => {
       let commands = []
 
       const arquivos = toolbox.filesystem.list(
-        toolbox.filesystem.cwd() + '/.gera-commands/'
+        toolbox.filesystem.cwd() + '/.gera/'
       )
 
       if (arquivos === undefined) return commands
@@ -16,9 +16,7 @@ module.exports = (toolbox: GluegunToolbox) => {
       const arquivoFilter = arquivos.filter(e => e.indexOf('.js') > 0)
 
       arquivoFilter.forEach(arquivo => {
-        const command = require(toolbox.filesystem.cwd() +
-          '/.gera-commands/' +
-          arquivo)
+        const command = require(toolbox.filesystem.cwd() + '/.gera/' + arquivo)
 
         const typeofName = typeof command.name
         const typeorRun = typeof command.run
@@ -43,7 +41,7 @@ module.exports = (toolbox: GluegunToolbox) => {
       return commands
     },
     diretoryTemplates: () => {
-      return toolbox.filesystem.cwd() + '/.gera-commands/templates'
+      return toolbox.filesystem.cwd() + '/.gera/templates'
     },
     generate: async (props: {
       template: string
@@ -51,10 +49,7 @@ module.exports = (toolbox: GluegunToolbox) => {
       props: {}
     }) => {
       const template =
-        toolbox.filesystem.cwd() +
-        '/.gera-commands/templates' +
-        '/' +
-        props.template
+        toolbox.filesystem.cwd() + '/.gera/templates' + '/' + props.template
 
       if (toolbox.filesystem.exists(template) !== 'file') {
         toolbox.print.error(`template not found. Target: ${template}`)

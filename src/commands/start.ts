@@ -12,12 +12,12 @@ module.exports = {
 
     await generate({
       template: 'exemple.ejs',
-      target: `.gera-commands/exemple.js`
+      target: `.gera/exemple.js`
     })
 
     await generate({
       template: 'exemple-template.ejs',
-      target: `.gera-commands/templates/exemplo.ejs`,
+      target: `.gera/templates/exemplo.ejs`,
       props: { name: '<%= props.name %>' }
     })
 

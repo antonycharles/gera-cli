@@ -24,13 +24,13 @@ const command: GluegunCommand = {
 
     await generate({
       template: 'new-command.ejs',
-      target: `.gera-commands/${first}.js`,
+      target: `.gera/${first}.js`,
       props: { command: first }
     })
 
     await generate({
       template: 'new-template.ejs',
-      target: `.gera-commands/templates/${first}.ejs`
+      target: `.gera/templates/${first}.ejs`
     })
 
     toolbox.print.success(`new command created!`)
